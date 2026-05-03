@@ -1,5 +1,5 @@
 <div align="center">
-<img src="./images/readme_background.png" width="600" alt="code with coco" />
+<img src="./images/readme_background.png" alt="code with coco" />
 </div>
 
 ## <img src="./images/bow.svg" height="24" style="vertical-align: middle;" /> &nbsp; about me
