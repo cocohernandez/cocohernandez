@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# coco — portfolio
 
-## Getting Started
+Source for [www.cocohdz.com](https://www.cocohdz.com). Designed in Figma, built with Next.js.
 
-First, run the development server:
+## Run it locally
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+    npm install
+    npm run dev        # http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deploying
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Every push to `main` runs `.github/workflows/deploy.yml`, which builds the site as
+static files (`npm run build` → `out/`) and publishes them to GitHub Pages.
+The custom domain is set in the repo's Pages settings (and `public/CNAME`).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Where things live
 
-## Learn More
+- `app/page.tsx` — home page; `app/{projects,media,about}` — "Coming soon" pages
+- `components/SiteNav.tsx`, `components/SiteFooter.tsx` — shared nav and footer
+- `components/Keycaps.tsx` — the "hello world" keycaps (positions from Figma)
+- `public/images/` — signature, photo, and keycap images exported from Figma
+- `app/favicon.ico`, `app/icon.svg`, `app/apple-icon.png` — site icons
 
-To learn more about Next.js, take a look at the following resources:
+## To fill in
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- GitHub URL and public email — `components/SiteFooter.tsx`
+- Résumé — add `public/resume.pdf`

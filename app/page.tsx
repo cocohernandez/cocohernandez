@@ -1,69 +1,43 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
+import Keycaps from "@/components/Keycaps";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
+    <main className="hero">
+      <img
+        className="hero-photo"
+        src="/images/photo.jpg"
+        alt="Coco walking across white rock formations by the sea, shot on film"
+      />
+
+      <div className="hero-text">
+        <Keycaps />
+
+        <div className="bio">
           <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+            I’m Coco, a software engineer and designer studying computer
+            science at Stanford.
+          </p>
+          <p>
+            I build robot puppies<Link className="fn" href="/projects#pupper">¹</Link>,
+            design for my clothing brand Lovelace
+            <Link className="fn" href="/projects#lovelace">²</Link>, make fashion +
+            tech content for 25k followers
+            <Link className="fn" href="/media">³</Link>, and explain blockchain art in
+            downtown Palo Alto<Link className="fn" href="/about#node">⁴</Link>.
+          </p>
+          <div className="verse">
+            <span>In every medium I touch,</span>
+            <span>I take the technical, the abstract,</span>
+            <span>and give it form,</span>
+            <span className="pixel" aria-label="down to the pixel.">{"down to the p                      l.\n                             i          e\n                                  x"}</span>
+          </div>
+          <p>
+            The ⌘ in my signature is an homage to my favorite designer,
+            Susan Kare, who chose it for Macintosh’s command key.
           </p>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
