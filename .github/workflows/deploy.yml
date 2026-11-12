@@ -1,5 +1,5 @@
 # Builds the site as static files and publishes it to GitHub Pages
-# (www.cocohdz.com) on every push to main.
+# (athenacocohernandez.com) on every push to main.
 name: Deploy to GitHub Pages
 
 on:

@@ -1,6 +1,6 @@
 # coco — portfolio
 
-Source for [www.cocohdz.com](https://www.cocohdz.com). Designed in Figma, built with Next.js.
+Source for [athenacocohernandez.com](https://athenacocohernandez.com). Designed in Figma, built with Next.js.
 
 ## Run it locally
 
