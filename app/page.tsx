@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Keycaps from "@/components/Keycaps";
+import { projectHref } from "@/lib/projects";
 
 export default function Home() {
   return (
@@ -19,11 +20,11 @@ export default function Home() {
             science at Stanford.
           </p>
           <p>
-            I build robot puppies<Link className="fn" href="/projects#pupper">¹</Link>,
+            I build robot puppies<Link className="fn" href={projectHref("pupper")}>¹</Link>,
             design for my clothing brand Lovelace
-            <Link className="fn" href="/projects#lovelace">²</Link>, make fashion +
+            <Link className="fn" href={projectHref("lovelace")}>²</Link>, make fashion +
             tech content for 25k followers
-            <Link className="fn" href="/media">³</Link>, and explain blockchain art in
+            <Link className="fn" href={projectHref("creator")}>³</Link>, and explain blockchain art in
             downtown Palo Alto<Link className="fn" href="/about#node">⁴</Link>.
           </p>
           <div className="verse">

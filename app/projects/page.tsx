@@ -1,5 +1,9 @@
-import ComingSoon from "@/components/ComingSoon";
+import ProjectGrid from "@/components/ProjectGrid";
 
 export default function ProjectsPage() {
-  return <ComingSoon />;
+  return (
+    <main className="projects">
+      <ProjectGrid />
+    </main>
+  );
 }

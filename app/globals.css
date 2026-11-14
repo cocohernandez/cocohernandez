@@ -130,6 +130,67 @@ a:hover { text-decoration: underline; text-underline-offset: 4px; }
   text-align: center;
 }
 
+/* ---------- projects ---------- */
+/* From the projects frame in Figma (222:1720): a 1060px-wide grid of three
+   324.69px columns with 42.97px gaps both ways, starting 143.52px from the
+   top of the window. */
+.projects { flex: 1; padding: calc(46.32px * var(--s)) var(--gutter) calc(60px * var(--s)); }
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: calc(42.973px * var(--s));
+  max-width: calc(1060px * var(--s));
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+.project { display: flex; flex-direction: column; gap: calc(14.324px * var(--s)); }
+.project:hover { text-decoration: none; }
+.project-image { display: block; width: 100%; aspect-ratio: 324.685 / 247.043; object-fit: cover; }
+/* Black and white until you hover over the project (only on devices with a
+   mouse; phones can't hover, so they show the photos in color). */
+@media (hover: hover) {
+  .project-image { filter: grayscale(1); transition: filter 250ms ease; }
+  .project:hover .project-image, .project:focus-visible .project-image { filter: none; }
+}
+.project-caption {
+  display: flex;
+  align-items: center;
+  gap: calc(10.743px * var(--s));
+  min-height: calc(42.973px * var(--s));
+}
+.project-number {
+  display: block;
+  flex-shrink: 0;
+  width: calc(35.811px * var(--s));
+  height: calc(35.811px * var(--s));
+  transition: transform 120ms ease, filter 120ms ease;
+}
+/* The number keycap presses like the home page keys: on click, or when its
+   number is typed on the keyboard. */
+.project:active .project-number, .project.is-pressed .project-number {
+  transform: translateY(3px) scale(0.95);
+  filter: brightness(1.3);
+}
+.project-title {
+  display: block;
+  margin: 0 0 calc(3.581px * var(--s));
+  font-size: calc(13.429px * var(--s));
+  line-height: calc(17.905px * var(--s));
+  font-weight: 700;
+  color: #202020;
+}
+.project-role {
+  display: block;
+  margin: 0;
+  font-size: calc(11.639px * var(--s));
+  line-height: calc(16.115px * var(--s));
+  font-weight: 400;
+  color: #6b6b66;
+}
+/* Tablets: two columns instead of squeezing three. */
+@media (max-width: 940px) { .project-grid { grid-template-columns: repeat(2, 1fr); } }
+
 /* ---------- mobile ---------- */
 /* From the "Final — Mobile" Figma frame (390px wide, 24px side padding),
    at full size: nav, then keycaps → photo → bio stacked, then the footer
@@ -176,10 +237,14 @@ a:hover { text-decoration: underline; text-underline-offset: 4px; }
   .footer-row { display: flex; justify-content: space-between; padding: 10px 0; }
 
   .coming-soon { padding-top: calc(50svh - 76px); } /* 76px = mobile nav */
+
+  /* Phones: one project per row, in the same 342px column as the home page. */
+  .projects { padding: 40px 24px 0; }
+  .project-grid { grid-template-columns: 1fr; gap: 32px; max-width: 342px; }
 }
 /* Phones narrower than 375px: shrink the keycaps so they never overflow. */
 @media (max-width: 374px) { .keys { --k: 0.8; } }
 @media (max-width: 339px) { .keys { --k: 0.7; } }
 @media (prefers-reduced-motion: reduce) {
-  .key { transition: none; }
+  .key, .project-number, .project-image { transition: none; }
 }

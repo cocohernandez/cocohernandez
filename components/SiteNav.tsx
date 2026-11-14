@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 
 const PAGES = [
   { href: "/projects", label: "Projects" },
-  { href: "/media", label: "Media" },
   { href: "/about", label: "About" },
 ];
 
@@ -29,7 +28,7 @@ export default function SiteNav() {
           <Link
             key={href}
             href={href}
-            aria-current={pathname === href ? "page" : undefined}
+            aria-current={pathname === href || pathname.startsWith(href + "/") ? "page" : undefined}
           >
             {label}
           </Link>
