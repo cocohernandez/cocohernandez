@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { CURRENT, projectHref } from "@/lib/projects";
+import { CURRENT, projectHref, projectImage } from "@/lib/projects";
 
 // The 3 × 2 grid from the projects frame in Figma (222:1720). The whole card
 // is a link, and typing 1–6 on the keyboard presses that number's keycap and
@@ -43,7 +43,7 @@ export default function ProjectGrid() {
       {CURRENT.map((p, i) => (
         <li key={p.slug}>
           <Link href={projectHref(p.slug)} className={`project${pressed === i ? " is-pressed" : ""}`}>
-            <img className="project-image" src={`/images/projects/${p.slug}.jpg`} alt="" />
+            <img className="project-image" src={projectImage(p)} alt="" />
             <span className="project-caption">
               <img className="project-number" src={`/images/numbers/${i + 1}.png`} alt={`${i + 1}`} />
               <span>
