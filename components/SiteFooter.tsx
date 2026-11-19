@@ -4,7 +4,7 @@ const LINKS = [
   { label: "TikTok", href: "https://www.tiktok.com/@athenacocohernandez" },
   { label: "YouTube", href: "https://www.youtube.com/@athenacocohernandez" },
   { label: "GitHub", href: "https://github.com/cocohernandez" },
-  { label: "Email", href: "mailto:you@example.com" }, // TODO: your public email
+  { label: "Email", href: "mailto:athenahernandezc@gmail.com" },
   { label: "Résumé", href: "/resume.pdf" }, // drop your résumé PDF into /public as resume.pdf
 ];
 
