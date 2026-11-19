@@ -1,8 +1,9 @@
 const LINKS = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/cocohernandez" },
-  { label: "Instagram", href: "https://www.instagram.com/cocohdzz" },
-  { label: "TikTok", href: "https://www.tiktok.com/@cocopuffffffffs" },
-  { label: "GitHub", href: "#" }, // TODO: your GitHub URL
+  { label: "Instagram", href: "https://www.instagram.com/athenacocohernandez" },
+  { label: "TikTok", href: "https://www.tiktok.com/@athenacocohernandez" },
+  { label: "YouTube", href: "https://www.youtube.com/@athenacocohernandez" },
+  { label: "GitHub", href: "https://github.com/cocohernandez" },
   { label: "Email", href: "mailto:you@example.com" }, // TODO: your public email
   { label: "Résumé", href: "/resume.pdf" }, // drop your résumé PDF into /public as resume.pdf
 ];
@@ -20,8 +21,9 @@ function FooterLink({ label, href }: { label: string; href: string }) {
 }
 
 export default function SiteFooter() {
-  // Two groups of three: one line on desktop, two rows on mobile (as in Figma).
-  const rows = [LINKS.slice(0, 3), LINKS.slice(3)];
+  // One line on desktop; on mobile, socials on the first row and
+  // GitHub/Email/Résumé on the second (as in Figma, plus YouTube).
+  const rows = [LINKS.slice(0, 4), LINKS.slice(4)];
   return (
     <footer className="footer">
       <nav className="footer-links" aria-label="Contact">
