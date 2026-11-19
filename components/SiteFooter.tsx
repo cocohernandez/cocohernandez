@@ -4,14 +4,14 @@ const LINKS = [
   { label: "TikTok", href: "https://www.tiktok.com/@athenacocohernandez" },
   { label: "YouTube", href: "https://www.youtube.com/@athenacocohernandez" },
   { label: "GitHub", href: "https://github.com/cocohernandez" },
-  { label: "Email", href: "mailto:athenahernandezc@gmail.com" },
-  { label: "Résumé", href: "/resume.pdf" }, // drop your résumé PDF into /public as resume.pdf
+  { label: "Email", href: "mailto:athenacocohernandez@gmail.com" },
+  { label: "Résumé", href: "/resume" }, // Coming soon page for now
 ];
 
 function FooterLink({ label, href }: { label: string; href: string }) {
-  // Email opens the mail app, so it stays in the same tab; a new tab would
-  // just leave an empty window behind.
-  return href.startsWith("mailto:") ? (
+  // Only outside sites open in a new tab. Email opens the mail app and
+  // pages on this site (like Résumé) stay in the same tab.
+  return !href.startsWith("http") ? (
     <a href={href}>{label}</a>
   ) : (
     <a href={href} target="_blank" rel="noopener noreferrer">
